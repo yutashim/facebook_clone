@@ -1,2 +1,7 @@
-<h1>Pictures#new</h1>
-<p>Find me in app/views/pictures/new.html.erb</p>
+<%= form_with(model: @picture, local: true) do |form| %>
+  <%= form.label :image %>
+  <%= form.file_field :image %> <br>
+  <%= form.label :sentence %>
+  <%= form.text_area :sentence %>
+  <%= form.submit %>
+<% end %>
