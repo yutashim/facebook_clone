@@ -3,5 +3,7 @@
   <%= form.file_field :image %> <br>
   <%= form.label :sentence %>
   <%= form.text_area :sentence %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  <% end %>
   <%= form.submit %>
 <% end %>
