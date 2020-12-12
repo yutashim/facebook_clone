@@ -19,6 +19,7 @@ class PicturesController < ApplicationController
   end
 
   def edit
+    @picture = Picture.find(params[:id])
   end
 
   def show
@@ -26,9 +27,19 @@ class PicturesController < ApplicationController
   end
 
   def update
+    @picture = Picture.find(params[:id])
+    if @picture.update(picture_params)
+      redirect_to picture_path(@picture.id)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @picture = Picture.find(params[:id])
+    @picture.destroy
+    redirect_to pictures_path
+
   end
 
   def confirm

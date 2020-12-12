@@ -4,5 +4,7 @@
     <span style="color: red;"><%= p.user.name %></span>
     <p><%= p.sentence %></p>
     <div><%= image_tag p.image.url %></div>
+    <%= link_to 'edit', edit_picture_path(p.id) %>
+    <%= link_to 'delete', picture_path(p.id), method: :delete %>
   </div>
 <% end %>

@@ -5,4 +5,6 @@
   <span style="color: red;"><%= @picture.user.name %></span>
   <p><%= @picture.sentence %></p>
   <div><%= image_tag @picture.image.url %></div>
+  <%= link_to 'edit', edit_picture_path(@picture.id) %>
+  <%= link_to 'delete', picture_path(@picture.id), method: :delete %>
 </div>
