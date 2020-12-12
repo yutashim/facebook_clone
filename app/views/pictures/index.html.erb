@@ -1,2 +1,8 @@
-<h1>Pictures#index</h1>
-<p>Find me in app/views/pictures/index.html.erb</p>
+<% @pictures.each do |p| %>
+  <div style="border: 2px solid skyblue;">
+    <%= image_tag "default_user.png", class: "user_image", size: "40x40" %>
+    <span style="color: red;"><%= p.user.name %></span>
+    <p><%= p.sentence %></p>
+    <div><%= image_tag p.image.url %></div>
+  </div>
+<% end %>
