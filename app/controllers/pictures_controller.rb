@@ -1,4 +1,9 @@
 class PicturesController < ApplicationController
+  before_action :authenticate_user, only: [:new, :edit, :home]
+
+  def home
+    redirect_to pictures_path
+  end
 
   def index
     @pictures = Picture.all
@@ -9,14 +14,6 @@ class PicturesController < ApplicationController
   end
 
   def create
-  #   @blog = current_user.blogs.build(blog_params)
-  #   if @blog.save
-  #     redirect_to blog_path(@blog.id)
-  #   else
-  #     render 'new'
-  #   end
-  # end
-  #
     @picture = current_user.pictures.build(picture_params)
     if params[:back] || @picture.invalid?
       render :new

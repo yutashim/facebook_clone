@@ -1,0 +1,10 @@
+<% if cause.errors.any? %>
+  <div id="error_explanation">
+  <h2><%= pluralize(cause.errors.count, "error") %> prohibited this product from being saved:</h2>
+  <ul>
+    <% cause.errors.full_messages.each do |message| %>
+      <li style="color: red;"><%= message %></li>
+    <% end %>
+  </ul>
+  </div>
+<% end %>
