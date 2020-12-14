@@ -10,6 +10,27 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require bootstrap/dist/css/bootstrap.min
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-color: #f8f9fa;
+}
+
+.facebook_logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.submit_btn_container {
+  padding: 0 20%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px;
+}
+
+.card-text {
+  margin-top: 1rem;
+}

@@ -9,7 +9,15 @@ class PicturesController < ApplicationController
   end
 
   def create
-    @picture = Picture.new(picture_params)
+  #   @blog = current_user.blogs.build(blog_params)
+  #   if @blog.save
+  #     redirect_to blog_path(@blog.id)
+  #   else
+  #     render 'new'
+  #   end
+  # end
+  #
+    @picture = current_user.pictures.build(picture_params)
     if params[:back] || @picture.invalid?
       render :new
     else
@@ -43,7 +51,7 @@ class PicturesController < ApplicationController
   end
 
   def confirm
-    @picture = Picture.new(picture_params)
+    @picture = current_user.pictures.build(picture_params)
     render :new if @picture.invalid?
   end
 

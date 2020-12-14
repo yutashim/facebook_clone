@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       render :new
     elsif @user.save
       session[:user_id] = @user.id
-      redirect_to user_path(@user.id)
+      redirect_to pictures_path
     else
       render :new
     end

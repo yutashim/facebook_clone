@@ -1,11 +1,1 @@
-<%= form_with(model: @picture, local: true) do |form| %>
-  <%= form.label :image %>
-  <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
-  <%= form.file_field :image %>
-  <%= form.hidden_field :image_cache %>
-  <%= form.label :sentence %>
-  <%= form.text_area :sentence %>
-  <%= form.hidden_field :user_id, value: current_user.id %>
-  <%= form.submit %>
-  <% byebug %>
-<% end %>
+<%= render 'form' %>

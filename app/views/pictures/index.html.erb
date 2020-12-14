@@ -1,10 +1,12 @@
 <% @pictures.each do |p| %>
-  <div style="border: 2px solid skyblue;">
-    <%= image_tag "default_user.png", class: "user_image", size: "40x40" %>
-    <span style="color: red;"><%= p.user.name %></span>
+  <div class="picture_container">
+    <h5>投稿</h5>
+    <div class="user_field">
+      <%= image_tag "default_user.png", class: "user_image", size: "40x40" %>
+      <span><%= p.user.name %></span>
+    </div>
     <p><%= p.sentence %></p>
-    <div><%= image_tag p.image.url %></div>
-    <%= link_to 'edit', edit_picture_path(p.id) %>
-    <%= link_to 'delete', picture_path(p.id), method: :delete %>
+    <%= image_tag p.image.url, class: "posted_picture" %>
+    <%= link_to '詳細ページへ', picture_path(p.id) %>
   </div>
 <% end %>

@@ -1,10 +1,14 @@
-<h1>Pictures#show</h1>
-<p>Find me in app/views/pictures/show.html.erb</p>
-<div style="border: 2px solid skyblue;">
-  <%= image_tag "default_user.png", class: "user_image", size: "40x40" %>
-  <span style="color: red;"><%= @picture.user.name %></span>
-  <p><%= @picture.sentence %></p>
-  <div><%= image_tag @picture.image.url %></div>
-  <%= link_to 'edit', edit_picture_path(@picture.id) %>
-  <%= link_to 'delete', picture_path(@picture.id), method: :delete %>
+<div class="container">
+<div class="media row">
+  <%= image_tag @picture.image.url, class: "col-sm-7" %>
+  <div class="media-body col-sm-5">
+    <h5 class="mt-0">
+      <%= image_tag "default_user.png", class: "user_image", size: "40x40" %>
+      <%= @picture.user.name %>
+    </h5>
+      <p><%= @picture.sentence %></p>
+      <%= link_to 'edit', edit_picture_path(@picture.id) %>
+      <%= link_to 'delete', picture_path(@picture.id), method: :delete %>
+  </div>
+</div>
 </div>
