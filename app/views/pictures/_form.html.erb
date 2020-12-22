@@ -1,11 +1,24 @@
 <%= form_with(model: @picture, local: true, url: new_or_edit) do |form| %>
   <div class="card">
     <% if @picture.id %>
-      <h5 class="card-header">投稿を編集する</h5>
+    <h5 class="card-header row">
+        <%= image_tag "default_user.png", class: "col-sm-2"%>
+      <div class="col-sm-10">
+        <p>hogehoge</p>
+        <h4>投稿を編集する</h4>
+      </div>
+    </h5>
     <% else %>
-      <h5 class="card-header">新規投稿をする</h5>
+    <h5 class="card-header row">
+        <%= image_tag "default_user.png", class: "col-sm-2"%>
+      <div class="col-sm-10">
+        <p>hogehoge</p>
+        <h4>新規投稿する</h4>
+      </div>
+    </h5>
     <% end %>
     <div class="card-body">
+      <h3 class="card-title">あなたの投稿</h3>
       <h5 class="card-text"><%= form.label :image %></h5>
       <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
       <%= form.file_field :image %>
@@ -13,11 +26,11 @@
       <h5 class="card-text"><%= form.label :sentence %></h5>
       <%= form.text_area :sentence, size: "40x6" %>
       <% if @picture.id %>
-        <input type="submit" name="commit" value="保存する" data-disable-with="Create User"
+        <input type="submit" name="commit" value="保存する"
         class="btn btn-success" />
       <% else %>
       <div class="submit_btn_container">
-        <input type="submit" name="commit" value="投稿する" data-disable-with="Create User"
+        <input type="submit" name="commit" value="投稿する"
         class="btn btn-success" />
         </div>
       <% end %>

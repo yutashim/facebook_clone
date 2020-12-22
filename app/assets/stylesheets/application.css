@@ -34,3 +34,7 @@ body {
 .card-text {
   margin-top: 1rem;
 }
+
+.card-header {
+  margin: 0;
+}
